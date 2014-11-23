@@ -2,6 +2,11 @@
 
 $( document ).ready(function(){
 createGrid();
+$(".container > div > div").mouseenter(function(){
+    $(this).addClass("selected");
+
+});
+
 });
 
 
@@ -23,7 +28,7 @@ function newRow(id){
 
 
   // create row html
-  append = "<div id = " + "'row" + id + "'" + "></div>";
+  append = "<div class=\"row\" id = " + "'row" + id + "'" + "></div>";
 
   //row before number
   before = id - 1;
