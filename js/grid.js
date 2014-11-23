@@ -6,7 +6,7 @@ createGrid();
 
 
 function createGrid(){
-  max = 15
+  max = 20
   x = 0;
   y = 0;
 
@@ -34,18 +34,26 @@ function newRow(id){
     $(append).appendTo(".container");
   }else if(id >= 1){
     $(append).appendTo('.container');
-    $(rowBefore).after(append);
+    //$(rowBefore).after(append);
   }
 }
 
 function newCol(row, col){
+  //column that already exists to append to
+  beforeNum = col - 1
+  beforeNum = beforeNum.toString();
+  // <div id= {column[0-15]}></div>
+  append = "<div id ='" + col.toString() + "'></div>";
+  // current col to add to html
+  colNumber = "'#" + col.toString() + "'";
+  // current col - 1 to add subsequent columns to the one before.
+  colDiff = "\"#" + beforeNum  + "'";
+  // current row setup for css selector
+  currentRow = "\"#row" + row.toString() + "\"";
 
-  append = "<div id =" + "'" + col + "'" + "></div>";
-  rowNumber = "'#row" + row + "'";
-  afterRow = "'#row" + row - 1 + "'";
   if(row == 0 ){
-    $(append).appendTo(rowNumber);
+    $(append).appendTo("#row0");
   }else if(row >= 1){
-    $(afterRow).after(append);
+    $(append).appendTo("#row" + row);
   }
 }

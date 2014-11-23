@@ -1,4 +1,10 @@
 .grid {
+
+}
+
+.container > div > div {
+  display: inline-block;
+  padding: 0px none;
   height:10px;
   width:10px;
   background-color:black;
